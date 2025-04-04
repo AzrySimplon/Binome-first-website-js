@@ -18,17 +18,39 @@ function populateSection(array, section) {
     array.forEach(element => {
         const mainDiv = document.createElement("div");
         mainDiv.setAttribute("class", "extension-div")
-        //add image
-        //add text Div
-        //add h3
-        //add p
-        //add interactive Div
-        //add remove button
-        //add input
+
+        const topDiv = document.createElement("div");
+
+        const image = document.createElement("img")
+        image.setAttribute("src", element.logo)
+
+        const textDiv = document.createElement("div");
+
+        const name = document.createElement("h3");
+        name.innerText = element.name;
+
+        const interactiveDiv = document.createElement("div");
+        interactiveDiv.setAttribute("id", element.name);
+
+        const removebutton = document.createElement("button");
+        removebutton.innerText = "Remove";
+
+        const input = document.createElement("input")
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("onclick", "activeInactive(this.parentElement.id)");
+        // onclick={} /
+
         const paragraph = document.createElement("p");
         paragraph.innerText = element.description;
 
-        mainDiv.appendChild(paragraph);
+        interactiveDiv.appendChild(removebutton);
+        interactiveDiv.appendChild(input);
+        topDiv.appendChild(image);
+        textDiv.appendChild(name);
+        textDiv.appendChild(paragraph);
+        topDiv.appendChild(textDiv);
+        mainDiv.appendChild(topDiv);
+        mainDiv.appendChild(interactiveDiv);
         section.appendChild(mainDiv);
     });
 }
