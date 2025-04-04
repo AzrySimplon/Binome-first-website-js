@@ -15,6 +15,9 @@
     --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 
+    --textTitle: hsl(200, 60%, 99%);
+    --bgGradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+
 }
 
 @font-face {
@@ -40,6 +43,7 @@
 
 p {
     font-size: 16px;
+    color: var(--neutral-60);
 }
 
 .extension-div {

@@ -16,19 +16,21 @@
 
     <header>
         <div class="mainlogo"><img src="assets/images/logo.svg" alt="logo"></div>
-        <button> <img src="assets/images/icon-moon.svg" alt=""></button>
+        <button onclick={changeColorMode()}> <img src="assets/images/icon-moon.svg" alt=""></button>
 
         <div>
             <h1>Extensions List </h1>
         </div>
 
-        <div>
-            <ul>
-                <il><button>All</button></il>
-                <il><button>Active</button></il>
-                <il><button>Inactive</button></il>
-            </ul>
+        <ul id="filter-list">
+            <il><button onclick={filterArray(null)}>All</button></il>
+            <il><button onclick={filterArray(true)}>Active</button></il>
+            <il><button onclick={filterArray(false)}>Inactive</button></il>
+        </ul>
+        <div id="StyleSpy">
+            <input type="checkbox" onclick={activeInactive(this.parentElement.id)} />
         </div>
+
     </header>
 
     <section id="extensions-section">
